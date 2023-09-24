@@ -28,6 +28,7 @@ export default function Post({ postData }) {
                 <title>{postData.title}</title>
             </Head>
             <article>
+                <h3>MISSION: {postData.mission}</h3>
                 <h1 className={utilStyles.headingXl}>{postData.title}</h1>
                 <div className={utilStyles.lightText}>
                     <Date dateString={postData.date} />
