@@ -4,17 +4,13 @@ import utilStyles from '../styles/utils.module.css';
 import Link from "next/link";
 import Date from "../components/date";
 import { getSortedPostsData } from '../lib/posts';
-
-export async function getStaticProps() {
-    const allPostsData = getSortedPostsData();
-    return {
-        props: {
-            allPostsData,
-        },
-    };
-}
-
-export default function Home({ allPostsData }) {
+import {GetStaticProps} from "next";
+export default function Home({ allPostsData }: { allPostsData: {
+        date: string;
+        title: string;
+        id: string;
+    }[];
+}) {
     return (
         <Layout home>
             <Head>
@@ -23,8 +19,9 @@ export default function Home({ allPostsData }) {
             <section className={utilStyles.headingMd}>
                 <p>Welcome to my Next.js learning site</p>
                 <p>
-                    This site is an exercise to learn Next.js following along with
-                    <a href="https://nextjs.org/learn"> the Next.js tutorial</a>.
+                    This site started as an exercise to learn Next.js following along with
+                    <a href="https://nextjs.org/learn"> the Next.js tutorial</a>. Now I am
+                    working towards personalizing. Check out the about page if you're interested as to why.
                 </p>
             </section>
             <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
@@ -44,3 +41,12 @@ export default function Home({ allPostsData }) {
         </Layout>
     );
 }
+
+export const getStaticProps: GetStaticProps = async () => {
+    const allPostsData = getSortedPostsData();
+    return {
+        props: {
+            allPostsData,
+        },
+    };
+};

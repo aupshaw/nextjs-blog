@@ -5,8 +5,8 @@ import utilStyles from '../styles/utils.module.css';
 import Link from "next/link";
 
 const name = 'Andrew Upshaw';
-export const siteTitle = 'Next.js Learning Website';
-export default function Layout({ children, home }) {
+export const siteTitle = 'Andrews Blog';
+export default function Layout({ children, home }: { children: React.ReactNode; home?: boolean}) {
     return (
         <div className={styles.container}>
             <Head>
@@ -29,11 +29,11 @@ export default function Layout({ children, home }) {
                     <>
                         <Image
                             priority
-                            src="/images/IMG_1048.JPG"
+                            src="/images/profile3.png"
                             className={utilStyles.borderCircle}
-                            height={326}
-                            width={245}
-                            alt="Lucy and Thomas"
+                            height={325}
+                            width={325}
+                            alt="aye ewe"
                         />
                         <h1 className={utilStyles.heading2Xl}>{name}</h1>
                     </>
@@ -42,11 +42,11 @@ export default function Layout({ children, home }) {
                         <Link href="/">
                             <Image
                                 priority
-                                src="/images/IMG_1048.JPG"
+                                src="/images/profile3.png"
                                 className={utilStyles.borderCircle}
-                                height={261}
-                                width={196}
-                                alt=""
+                                height={260}
+                                width={260}
+                                alt="aye ewe"
                             />
                         </Link>
                         <h2 className={utilStyles.headingLg}>
@@ -57,6 +57,11 @@ export default function Layout({ children, home }) {
                     </>
                 )}
             </header>
+            <div>
+                <Link href={`/`}>HOME</Link>
+                <Link href={`/about`}>  ABOUT</Link>
+                <Link href={`/bio`}>  BIO</Link>
+            </div>
             <main>{children}</main>
             {!home && (
                 <div className={styles.backToHome}>
