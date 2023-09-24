@@ -5,8 +5,8 @@ import utilStyles from '../styles/utils.module.css';
 import Link from "next/link";
 
 const name = 'Andrew Upshaw';
-export const siteTitle = 'Next.js Learning Website';
-export default function Layout({ children, home }) {
+export const siteTitle = 'Andrews Blog';
+export default function Layout({ children, home }: { children: React.ReactNode; home?: boolean}) {
     return (
         <div className={styles.container}>
             <Head>
@@ -57,6 +57,11 @@ export default function Layout({ children, home }) {
                     </>
                 )}
             </header>
+            <div>
+                <Link href={`/`}>HOME</Link>
+                <Link href={`/about`}>ABOUT</Link>
+                <Link href={`/bio`}>BIO</Link>
+            </div>
             <main>{children}</main>
             {!home && (
                 <div className={styles.backToHome}>

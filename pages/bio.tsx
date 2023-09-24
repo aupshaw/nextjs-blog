@@ -1,7 +1,7 @@
 import Head from "next/head";
 import Layout from "../components/layout";
 import Image from "next/image";
-export default function FirstPost() {
+export default function Bio() {
     return (
         <Layout>
             <Head><title>Bio</title></Head>
