@@ -59,8 +59,8 @@ export default function Layout({ children, home }: { children: React.ReactNode; 
             </header>
             <div>
                 <Link href={`/`}>HOME</Link>
-                <Link href={`/about`}>ABOUT</Link>
-                <Link href={`/bio`}>BIO</Link>
+                <Link href={`/about`}>  ABOUT</Link>
+                <Link href={`/bio`}>  BIO</Link>
             </div>
             <main>{children}</main>
             {!home && (
