@@ -9,6 +9,9 @@
     "start": "next start"
   },
   "dependencies": {
+    "@mantine/core": "^7.0.1",
+    "@mantine/hooks": "^7.0.1",
+    "@tabler/icons-react": "^2.38.0",
     "date-fns": "^2.30.0",
     "gray-matter": "^4.0.3",
     "next": "latest",
@@ -21,6 +24,9 @@
   "devDependencies": {
     "@types/node": "20.6.5",
     "@types/react": "18.2.22",
+    "postcss": "^8.4.30",
+    "postcss-preset-mantine": "^1.7.0",
+    "postcss-simple-vars": "^7.0.1",
     "typescript": "5.2.2"
   }
 }
